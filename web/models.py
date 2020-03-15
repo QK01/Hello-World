@@ -14,6 +14,22 @@ class Expence(models.Model):
     amount = models.BigIntegerField()
     user = models.ForeignKey(User)
 
+    def __unicode__(self):
+        return "{}-{}".format(self.date ,self.text)
+
+
+
+class Income(models.Model):
+    text = models.CharField(max_length = 255)
+    date = models.DateField()
+    amount = models.BigIntegerField()
+    user = models.ForeignKey(User)
+    
+    def __str__(self):
+        return "{}-{}".format(self.date ,self.text)
+    
+
+
 
 
 
